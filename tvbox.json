@@ -3,10 +3,27 @@
   "wallpaper": "",
   "sites": [],
   "lives": [
-    { "name": "央视卫视", "type": 0, "url": "https://cdn.jsdelivr.net/gh/loobug/tv-source@main/live.m3u", "playerType": 1, "ua": 1 },
-    { "name": "央视卫视(备用)", "type": 0, "url": "https://raw.githubusercontent.com/loobug/tv-source/main/live.m3u", "playerType": 1, "ua": 1 }
+    {
+      "name": "央视卫视",
+      "type": 0,
+      "url": "https://tv-source.pages.dev/live.m3u",
+      "playerType": 1,
+      "ua": 1
+    }
   ],
   "headers": [],
-  "flag": ["youku","qq","iqiyi","qiyi","letv","sohu","tudou","pptv","mgtv","wasu","bilibili"],
+  "flag": [
+    "youku",
+    "qq",
+    "iqiyi",
+    "qiyi",
+    "letv",
+    "sohu",
+    "tudou",
+    "pptv",
+    "mgtv",
+    "wasu",
+    "bilibili"
+  ],
   "ads": []
 }

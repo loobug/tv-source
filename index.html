@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>电视库 · 直播源</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 -apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:#0b1020;color:#e7ecff}
+header{position:sticky;top:0;background:rgba(11,16,32,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1d2748;padding:18px 22px;z-index:5}
+h1{margin:0 0 4px;font-size:20px;font-weight:600}
+.sub{color:#8fa0c8;font-size:13px}
+.tools{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+input{flex:1;min-width:200px;background:#141b34;border:1px solid #25305a;color:#e7ecff;border-radius:8px;padding:9px 12px;font-size:14px}
+a.btn{background:#17203c;border:1px solid #2c3a6b;color:#cfd9ff;text-decoration:none;padding:9px 14px;border-radius:8px;font-size:13px}
+main{padding:18px 22px 60px;max-width:1100px;margin:0 auto}
+.grp{margin:22px 0}
+h2{font-size:15px;color:#9fb2dd;font-weight:600;margin:0 0 8px;display:flex;gap:8px;align-items:center}
+.cnt{background:#1b2444;color:#8fa0c8;border-radius:99px;padding:1px 8px;font-size:12px}
+table{width:100%;border-collapse:collapse;background:#101733;border:1px solid #1c2545;border-radius:10px;overflow:hidden}
+td{padding:8px 12px;border-bottom:1px solid #171f3c;font-size:14px}
+tr:last-child td{border-bottom:none}
+.idx{color:#5c6b96;width:44px}
+.ac{text-align:right;white-space:nowrap}
+button{background:#1d2748;border:1px solid #2b3763;color:#cfd9ff;border-radius:7px;padding:5px 10px;font-size:12px;cursor:pointer;margin-left:6px}
+button:hover{background:#25325c}
+#player{position:fixed;inset:auto 0 0 0;background:#05070f;border-top:1px solid #1d2748;padding:10px;display:none}
+#player.on{display:block}
+video{width:100%;max-height:52vh;background:#000;border-radius:8px}
+#ptitle{color:#9fb2dd;font-size:13px;margin:0 0 8px;display:flex;justify-content:space-between}
+footer{color:#5c6b96;font-size:12px;text-align:center;padding:24px}
+.hide{display:none !important}
+</style>
+</head>
+<body>
+<header>
+  <h1>电视库 · 直播源</h1>
+  <div class="sub">212 个频道 / 3 个分组 · 清单：<code>/live.m3u</code> · TVBox 配置：<code>/tvbox.json</code></div>
+  <div class="tools">
+    <input id="q" placeholder="搜索频道名…（例如 CCTV / 卫视）" autocomplete="off">
+    <a class="btn" href="/live.m3u">下载 m3u</a>
+    <a class="btn" href="/tvbox.json">TVBox 配置</a>
+  </div>
+</header>
+<main id="list">
+
+  <section class="grp" data-group="央视">
+    <h2>央视 <span class="cnt">38</span></h2>
+    <table><tbody>
+      <tr data-name="cctv-1 (720p)" data-url="http://74.91.26.218:82/live/cctv1hd.m3u8">
+        <td class="idx">1</td>
+        <td class="nm">CCTV-1 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-1 hd (1080p)" data-url="http://69.30.245.50/live/cctv1.m3u8">
+        <td class="idx">2</td>
+        <td class="nm">CCTV-1 HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-10 (720p)" data-url="http://74.91.26.218:82/live/cctv10hd.m3u8">
+        <td class="idx">3</td>
+        <td class="nm">CCTV-10 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-11 (720p)" data-url="http://74.91.26.218:82/live/cctv11hd.m3u8">
+        <td class="idx">4</td>
+        <td class="nm">CCTV-11 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-12 (720p)" data-url="http://74.91.26.218:82/live/cctv12hd.m3u8">
+        <td class="idx">5</td>
+        <td class="nm">CCTV-12 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-13 (720p)" data-url="http://74.91.26.218:82/live/cctv13hd.m3u8">
+        <td class="idx">6</td>
+        <td class="nm">CCTV-13 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-13 hd (1080p)" data-url="http://go.bkpcp.top/mg/cctv13">
+        <td class="idx">7</td>
+        <td class="nm">CCTV-13 HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-14 hd (1080p)" data-url="http://74.91.26.218:82/live/cctv14hd.m3u8">
+        <td class="idx">8</td>
+        <td class="nm">CCTV-14 HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-15 (720p)" data-url="http://74.91.26.218:82/live/cctv15hd.m3u8">
+        <td class="idx">9</td>
+        <td class="nm">CCTV-15 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-16 hd (1080p)" data-url="http://74.91.26.218:82/live/cctv16hd.m3u8">
+        <td class="idx">10</td>
+        <td class="nm">CCTV-16 HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-17 hd (1080p)" data-url="http://74.91.26.218:82/live/cctv17hd.m3u8">
+        <td class="idx">11</td>
+        <td class="nm">CCTV-17 HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-2 (720p)" data-url="http://74.91.26.218:82/live/cctv2hd.m3u8">
+        <td class="idx">12</td>
+        <td class="nm">CCTV-2 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-3 (720p)" data-url="http://74.91.26.218:82/live/cctv3hd.m3u8">
+        <td class="idx">13</td>
+        <td class="nm">CCTV-3 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-4 america" data-url="https://h5cul1yar48um3t.wcetv.com/hls/cctv4.m3u8">
+        <td class="idx">14</td>
+        <td class="nm">CCTV-4 America</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-4 asia (720p)" data-url="http://74.91.26.218:82/live/cctv4hd.m3u8">
+        <td class="idx">15</td>
+        <td class="nm">CCTV-4 Asia (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-4 europe" data-url="https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8">
+        <td class="idx">16</td>
+        <td class="nm">CCTV-4 Europe</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-4k hd (1080p)" data-url="http://198.204.240.250:82/live/cctv4k.m3u8">
+        <td class="idx">17</td>
+        <td class="nm">CCTV-4K HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-5+ (1080p)" data-url="https://php.jdshipin.com/TVOD/iptv.php?id=cctv5p">
+        <td class="idx">18</td>
+        <td class="nm">CCTV-5+ (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-6 [geo-blocked]" data-url="https://live.eac-news.com/CCTV/streams/cctv6.m3u8">
+        <td class="idx">19</td>
+        <td class="nm">CCTV-6 [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-6 hd (1080p)" data-url="http://69.30.245.50/live/cctv6.m3u8">
+        <td class="idx">20</td>
+        <td class="nm">CCTV-6 HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-7 (720p)" data-url="http://74.91.26.218:82/live/cctv7hd.m3u8">
+        <td class="idx">21</td>
+        <td class="nm">CCTV-7 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-8 (720p)" data-url="http://74.91.26.218:82/live/cctv8hd.m3u8">
+        <td class="idx">22</td>
+        <td class="nm">CCTV-8 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-8k hd (1080p)" data-url="http://192.151.150.154/live/cctv8k.m3u8">
+        <td class="idx">23</td>
+        <td class="nm">CCTV-8K HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-9 (576i)" data-url="https://xykt-fix.github.io/Y77.m3u8">
+        <td class="idx">24</td>
+        <td class="nm">CCTV-9 (576i)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-billiards (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/ystq.m3u8?auth=testpub">
+        <td class="idx">25</td>
+        <td class="nm">CCTV-Billiards (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-culture of quality sd (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/ysjp.m3u8?auth=testpub">
+        <td class="idx">26</td>
+        <td class="nm">CCTV-Culture of Quality SD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-golf &amp; tennis (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub">
+        <td class="idx">27</td>
+        <td class="nm">CCTV-Golf &amp; Tennis (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-health (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/wsjk.m3u8?auth=testpub">
+        <td class="idx">28</td>
+        <td class="nm">CCTV-Health (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-nostalgia theater (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub">
+        <td class="idx">29</td>
+        <td class="nm">CCTV-Nostalgia Theater (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-storm football (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub">
+        <td class="idx">30</td>
+        <td class="nm">CCTV-Storm Football (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-storm music (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub">
+        <td class="idx">31</td>
+        <td class="nm">CCTV-Storm Music (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-storm theater (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub">
+        <td class="idx">32</td>
+        <td class="nm">CCTV-Storm Theater (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-the first theater (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub">
+        <td class="idx">33</td>
+        <td class="nm">CCTV-The First Theater (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-weapon &amp; technology (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub">
+        <td class="idx">34</td>
+        <td class="nm">CCTV-Weapon &amp; Technology (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-women's fashion sd (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/nxss.m3u8?auth=testpub">
+        <td class="idx">35</td>
+        <td class="nm">CCTV-Women's Fashion SD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv-world geography sd (1080p)" data-url="http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub">
+        <td class="idx">36</td>
+        <td class="nm">CCTV-World Geography SD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv+ 1 (600p) [not 24/7]" data-url="https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL1.smil/playlist.m3u8">
+        <td class="idx">37</td>
+        <td class="nm">CCTV+ 1 (600p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cctv+ 2 (600p) [not 24/7]" data-url="https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL2.smil/playlist.m3u8">
+        <td class="idx">38</td>
+        <td class="nm">CCTV+ 2 (600p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr></tbody></table>
+  </section>
+
+  <section class="grp" data-group="新闻">
+    <h2>新闻 <span class="cnt">25</span></h2>
+    <table><tbody>
+      <tr data-name="anshun comprehensive news channel" data-url="https://hplayer1.juyun.tv/camera/154379194.m3u8">
+        <td class="idx">1</td>
+        <td class="nm">Anshun Comprehensive News Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cgtn (1080p)" data-url="https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8">
+        <td class="idx">2</td>
+        <td class="nm">CGTN (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="chifeng comprehensive news chanel" data-url="http://play1-qk.nmtv.cn/live/1735546697341033.m3u8">
+        <td class="idx">3</td>
+        <td class="nm">Chifeng Comprehensive News Chanel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="chuxiong news channel [not 24/7]" data-url="http://hwapi.yntv.net/ew265l/848y54.m3u8">
+        <td class="idx">4</td>
+        <td class="nm">Chuxiong News Channel [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="chuzhou news channel (1080p)" data-url="http://live.cztv.cc:85/live/xwpd.m3u8">
+        <td class="idx">5</td>
+        <td class="nm">Chuzhou News Channel (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cts news [geo-blocked]" data-url="http://seb.sason.top/sc/hsxw_fhd.m3u8">
+        <td class="idx">6</td>
+        <td class="nm">CTS News [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="dha (720p) [not 24/7]" data-url="https://603c568fccdf5.streamlock.net/live/dhaweb1_C5efC/playlist.m3u8">
+        <td class="idx">7</td>
+        <td class="nm">DHA (720p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="dongguan comprehensive news channel" data-url="http://stream.sun0769.com/dgrtv1/mp4tv1_1500.flv">
+        <td class="idx">8</td>
+        <td class="nm">Dongguan Comprehensive News Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ebc financial news (1080p) [not 24/7]" data-url="http://seb.sason.top/sc/dscjxw_fhd.m3u8">
+        <td class="idx">9</td>
+        <td class="nm">EBC Financial News (1080p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ebc news (1080p) [not 24/7]" data-url="http://seb.sason.top/sc/dsxw_fhd.m3u8">
+        <td class="idx">10</td>
+        <td class="nm">EBC News (1080p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ftv taiwan (720p) [not 24/7]" data-url="http://seb.sason.top/ptv/ftv.php?id=tw">
+        <td class="idx">11</td>
+        <td class="nm">FTV Taiwan (720p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="harbin comprehensive news channel" data-url="https://stream.hrbtv.net/xwzh/playlist.m3u8?_upt=ef41dd531755913594">
+        <td class="idx">12</td>
+        <td class="nm">Harbin Comprehensive News Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hebi news channel (480p) [not 24/7]" data-url="http://pili-live-hls.hebitv.com/hebi/hebi.m3u8">
+        <td class="idx">13</td>
+        <td class="nm">Hebi News Channel (480p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hunan news channel [geo-blocked]" data-url="http://35848.hlsplay.aodianyun.com/guangdianyun_35848/tv_channel_346.m3u8">
+        <td class="idx">14</td>
+        <td class="nm">Hunan News Channel [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jingmen comprehensive news channel" data-url="https://stream.jmtv.com.cn/xwzh/sd/live.m3u8?_upt=341f4b8e1791883036">
+        <td class="idx">15</td>
+        <td class="nm">Jingmen Comprehensive News Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiuquan tv news comprehensive channel (576p)" data-url="http://117.156.28.119/270000001111/1110000001/index.m3u8">
+        <td class="idx">16</td>
+        <td class="nm">Jiuquan TV News Comprehensive Channel (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="lanzhou comprehensive news channel" data-url="https://liveplus.lzr.com.cn/xwzh/HD/live.m3u8">
+        <td class="idx">17</td>
+        <td class="nm">Lanzhou Comprehensive News Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="phoenix infonews channel (720p)" data-url="http://223.110.245.167/ott.js.chinamobile.com/PLTV/3/224/3221226923/index.m3u8">
+        <td class="idx">18</td>
+        <td class="nm">Phoenix InfoNews Channel (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="pingxiang tv news channel (576p) [not 24/7]" data-url="http://www.pxitv.com:8099/hls-live/livepkgr/_definst_/pxitvevent/pxtv1stream.m3u8">
+        <td class="idx">19</td>
+        <td class="nm">Pingxiang TV News Channel (576p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="qtv-1" data-url="http://119.166.53.110:85/tsfile/live/1000_1.m3u8?authid=0&amp;key=txiptv&amp;playlive=1">
+        <td class="idx">20</td>
+        <td class="nm">QTV-1</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="set news (1080p) [geo-blocked]" data-url="http://seb.sason.top/sc/sllive_fhd.m3u8">
+        <td class="idx">21</td>
+        <td class="nm">SET News (1080p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tdm information (720p) [not 24/7]" data-url="https://live3.tdm.com.mo/ch5/info_ch5.live/playlist.m3u8">
+        <td class="idx">22</td>
+        <td class="nm">TDM Information (720p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tonghua tv (1080p)" data-url="http://lsfb.avap.jilintv.cn/zqvk7vpj/channel/43ea5771aa44421591f9dfd2b71f1b9b/index.m3u8">
+        <td class="idx">23</td>
+        <td class="nm">Tonghua TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ttv news" data-url="https://live.wcetv.com/hls/master-ttvnews.m3u8">
+        <td class="idx">24</td>
+        <td class="nm">TTV News</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tvbs news [geo-blocked]" data-url="http://seb.sason.top/sc/tvbsxw_fhd.m3u8">
+        <td class="idx">25</td>
+        <td class="nm">TVBS News [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr></tbody></table>
+  </section>
+
+  <section class="grp" data-group="其他">
+    <h2>其他 <span class="cnt">149</span></h2>
+    <table><tbody>
+      <tr data-name="anhui tv (1080p)" data-url="https://restream.pdtvhd.com/memfs/c1cd2ed0-3b2b-4c25-af98-a7fb0b1eb130.m3u8">
+        <td class="idx">1</td>
+        <td class="nm">Anhui TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="babyfirst (720p)" data-url="https://cdn.fast.jwp.services/v1/channel/1_jB6940Ei_TvhvIHDL/manifest.m3u8">
+        <td class="idx">2</td>
+        <td class="nm">BabyFirst (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="baicheng tv [geo-blocked]" data-url="https://stream2.jlntv.cn/baicheng1/sd/live.m3u8">
+        <td class="idx">3</td>
+        <td class="nm">Baicheng TV [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="beijing satellite tv [not 24/7]" data-url="http://ivi.bupt.edu.cn/hls/btv1.m3u8">
+        <td class="idx">4</td>
+        <td class="nm">Beijing Satellite TV [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="beijing satellite tv hd (1080p)" data-url="http://go.bkpcp.top/mg/bjws">
+        <td class="idx">5</td>
+        <td class="nm">Beijing Satellite TV HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="bingtuan satellite tv (540p) [not 24/7]" data-url="http://112.25.48.68/live/program/live/btws/1300000/mnf.m3u8">
+        <td class="idx">6</td>
+        <td class="nm">Bingtuan Satellite TV (540p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="bread tv (720p)" data-url="https://video.bread-tv.com:8091/hls-live24/online/index.m3u8">
+        <td class="idx">7</td>
+        <td class="nm">Bread TV (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="brtv kaku childrens channel" data-url="http://223.111.191.105/downflv.brtvcloud.com/kkkkasd/winfr.m3u8">
+        <td class="idx">8</td>
+        <td class="nm">BRTV Kaku Childrens Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="bstv (hong kong) (576p)" data-url="http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8">
+        <td class="idx">9</td>
+        <td class="nm">BSTV (Hong Kong) (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="celestial movies (576i)" data-url="http://103.58.160.157:8278/720-CELESTIALMOVIES/playlist.m3u8">
+        <td class="idx">10</td>
+        <td class="nm">Celestial Movies (576i)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cetv-1 (576p)" data-url="http://117.161.133.51:81/gitv_live/G_CETV-1/G_CETV-1.m3u8?p=GITV">
+        <td class="idx">11</td>
+        <td class="nm">CETV-1 (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cetv-2 (576p)" data-url="http://117.161.133.51:81/gitv_live/G_CETV-2/G_CETV-2.m3u8?p=GITV">
+        <td class="idx">12</td>
+        <td class="nm">CETV-2 (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cgtn global biz (1080p)" data-url="https://fastlive.cctvplus.com/out/v1/2b3d8a0c805d437f9dc85b764c2ac599/index.m3u8">
+        <td class="idx">13</td>
+        <td class="nm">CGTN Global Biz (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="channel 8 (singapore) (720p)" data-url="https://cdn.qd.je/163189/ch8">
+        <td class="idx">14</td>
+        <td class="nm">Channel 8 (Singapore) (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="channel u (720p)" data-url="https://cdn.qd.je/163189/chu">
+        <td class="idx">15</td>
+        <td class="nm">Channel U (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="chaozhou public channel" data-url="http://113.64.146.48:1688/hls/4/index.m3u8">
+        <td class="idx">16</td>
+        <td class="nm">Chaozhou Public Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="chc action (1080p)" data-url="http://39.134.19.68/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8">
+        <td class="idx">17</td>
+        <td class="nm">CHC Action (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="chc home theater (1080p)" data-url="http://39.134.19.153/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226462/index.m3u8">
+        <td class="idx">18</td>
+        <td class="nm">CHC Home Theater (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="china travel (1080p)" data-url="https://fastlive.cctvplus.com/out/v1/ca6f9297b7314a63959435028af287fc/index.m3u8">
+        <td class="idx">19</td>
+        <td class="nm">China Travel (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="china weather channel (576p) [not 24/7]" data-url="http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8">
+        <td class="idx">20</td>
+        <td class="nm">China Weather Channel (576p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="chuzhou public channel (400p)" data-url="http://live.cztv.cc:85/live/ggpd.m3u8">
+        <td class="idx">21</td>
+        <td class="nm">Chuzhou Public Channel (400p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="chuzhou science &amp; education channel (400p)" data-url="http://live.cztv.cc:85/live/sjpd.m3u8">
+        <td class="idx">22</td>
+        <td class="nm">Chuzhou Science &amp; Education Channel (400p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cnd film discovery channel (576p)" data-url="http://125.210.152.18:9090/live/FXZL_750.m3u8">
+        <td class="idx">23</td>
+        <td class="nm">CND Film Discovery Channel (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cnd film middle school channel" data-url="http://live2.rxip.sc96655.com/live/zxs_4000.m3u8?A=&amp;E=&amp;K=&amp;P=&amp;S=&amp;U=">
+        <td class="idx">24</td>
+        <td class="nm">CND Film Middle School Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="creatv channel 15 (720p)" data-url="https://reflect-creatv.cablecast.tv/live-13/live/live.m3u8">
+        <td class="idx">25</td>
+        <td class="nm">CreaTV Channel 15 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="cti variety (720p)" data-url="http://23.237.10.66:16372">
+        <td class="idx">26</td>
+        <td class="nm">CTi Variety (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="daai 1 (720p)" data-url="https://pulltv1.wanfudaluye.com/live/tv1.m3u8">
+        <td class="idx">27</td>
+        <td class="nm">DaAi 1 (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="daai 2 (1080p)" data-url="http://nmk.ioapk.com:5050/4gtv-live106/index.m3u8">
+        <td class="idx">28</td>
+        <td class="nm">DaAi 2 (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="discovering china (1080p)" data-url="https://fastlive.cctvplus.com/out/v1/8442c3bfd4c64a3984389328f6087879/index.m3u8">
+        <td class="idx">29</td>
+        <td class="nm">Discovering China (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="documentary humanities channel (1080p)" data-url="http://39.135.138.59:18890/PLTV/88888910/224/3221225655/index.m3u8">
+        <td class="idx">30</td>
+        <td class="nm">Documentary Humanities Channel (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="dragon tv international" data-url="https://restream.pdtvhd.com/memfs/0b1b95c9-3543-4af9-9fdb-cf45f1602f17.m3u8">
+        <td class="idx">31</td>
+        <td class="nm">Dragon TV International</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="dunhuang tv (1080p)" data-url="http://117.156.28.119/270000001111/1110000028/index.m3u8">
+        <td class="idx">32</td>
+        <td class="nm">Dunhuang TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ebc foreign movie" data-url="http://111.59.139.85:11888/tsfile/live/1217_1.m3u8?key=txiptv">
+        <td class="idx">33</td>
+        <td class="nm">EBC Foreign Movie</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="fengshang shopping channel (1080p)" data-url="http://183.207.248.71/cntv/live1/fengshanggw/fengshanggw">
+        <td class="idx">34</td>
+        <td class="nm">Fengshang Shopping Channel (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ftv (taiwan) (720p) [not 24/7]" data-url="http://seb.sason.top/ptv/ftv.php?id=ms">
+        <td class="idx">35</td>
+        <td class="nm">FTV (Taiwan) (720p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ftv one (720p) [not 24/7]" data-url="http://seb.sason.top/ptv/ftv.php?id=dy">
+        <td class="idx">36</td>
+        <td class="nm">FTV One (720p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="fujian comprehensive channel" data-url="http://120.39.52.202:5140/福建综合">
+        <td class="idx">37</td>
+        <td class="nm">Fujian Comprehensive Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="god stands kids club tv chinese" data-url="https://online.godstands.tv:5443/WebRTCApp/streams/KidsChinese.m3u8">
+        <td class="idx">38</td>
+        <td class="nm">God Stands Kids Club TV Chinese</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="golden eagle cartoon (576p)" data-url="http://223.110.245.145/ott.js.chinamobile.com/PLTV/3/224/3221226303/index.m3u8">
+        <td class="idx">39</td>
+        <td class="nm">Golden Eagle Cartoon (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="guangdong satellite tv" data-url="https://h5cul1yar48um3t.wcetv.com/hls/gdsatellite.m3u8">
+        <td class="idx">40</td>
+        <td class="nm">Guangdong Satellite TV</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="guangdong tv america" data-url="https://h5cul1yar48um3t.wcetv.com/hls/gdtv.m3u8">
+        <td class="idx">41</td>
+        <td class="nm">Guangdong TV America</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="guangxi variety &amp; travel channel" data-url="http://111.59.24.227:8181/tsfile/live/1001_1.m3u8?authid=0&amp;key=txiptv&amp;playlive=1">
+        <td class="idx">42</td>
+        <td class="nm">Guangxi Variety &amp; Travel Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="guangzhou tv" data-url="https://tencentplaybusiness.gztv.com/live/zonghes.m3u8">
+        <td class="idx">43</td>
+        <td class="nm">Guangzhou TV</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="guizhou tv (576p)" data-url="http://183.207.248.71/gitv/live1/G_GUIZHOU/G_GUIZHOU">
+        <td class="idx">44</td>
+        <td class="nm">Guizhou TV (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hakka tv" data-url="https://h5cul1yar48um3t.wcetv.com/hls/hakkatv.m3u8">
+        <td class="idx">45</td>
+        <td class="nm">Hakka TV</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="harbin movie channel" data-url="https://stream.hrbtv.net/yspd/playlist.m3u8">
+        <td class="idx">46</td>
+        <td class="nm">Harbin Movie Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hebei tv (2160p)" data-url="https://event.pull.hebtv.com/live/live101.m3u8">
+        <td class="idx">47</td>
+        <td class="nm">Hebei TV (2160p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="heilongjiang tv (1080p)" data-url="http://223.110.245.161/ott.js.chinamobile.com/PLTV/3/224/3221227492/index.m3u8">
+        <td class="idx">48</td>
+        <td class="nm">Heilongjiang TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hezheng tv" data-url="http://117.156.28.119/270000001111/1110000149/index.m3u8">
+        <td class="idx">49</td>
+        <td class="nm">Hezheng TV</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="high channel tv (1080p)" data-url="http://117.156.28.119/270000001111/1110000146/index.m3u8">
+        <td class="idx">50</td>
+        <td class="nm">High Channel TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="homeplus" data-url="https://homeplushls.wns.live/hls/stream.m3u8">
+        <td class="idx">51</td>
+        <td class="nm">HomePlus</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hong kong international business channel (1080p) [geo-blocked]" data-url="https://hoytv-live-stream.hoy.tv/ch76/index-fhd.m3u8">
+        <td class="idx">52</td>
+        <td class="nm">Hong Kong International Business Channel (1080p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hunan economy channel" data-url="https://p8.vzan.com/slowlive/415983998730568937/live.m3u8">
+        <td class="idx">53</td>
+        <td class="nm">Hunan Economy Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hunan politics &amp; law channel [geo-blocked]" data-url="http://35848.hlsplay.aodianyun.com/guangdianyun_35848/tv_channel_348.m3u8">
+        <td class="idx">54</td>
+        <td class="nm">Hunan Politics &amp; Law Channel [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hunan tv (2160p)" data-url="http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/dWlwPTEyNy4wLjAuMSZ1aWQ9cWluZy1jbXMmbm5fdGltZXpvbmU9OCZjZG5leF9pZD1hbF9obHNfbGR2dCZ1dWlkPTliODY4NmU5ZTM2YzYwMmMmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8">
+        <td class="idx">55</td>
+        <td class="nm">Hunan TV (2160p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="hunan womens channel [geo-blocked]" data-url="http://35848.hlsplay.aodianyun.com/guangdianyun_35848/tv_channel_349.m3u8">
+        <td class="idx">56</td>
+        <td class="nm">Hunan Womens Channel [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="indigenous tv (720p)" data-url="http://streamipcf.akamaized.net/live/_definst_/smil:liveabr.smil/playlist.m3u8">
+        <td class="idx">57</td>
+        <td class="nm">Indigenous TV (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jade (1080p)" data-url="http://103.172.187.30:12000/stream/mytv/null-1/master.m3u8">
+        <td class="idx">58</td>
+        <td class="nm">Jade (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangsu city channel (576p)" data-url="http://183.207.248.71/gitv/live1/G_JSCS/G_JSCS">
+        <td class="idx">59</td>
+        <td class="nm">Jiangsu City Channel (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangsu educational channel (576p)" data-url="http://223.110.245.151/ott.js.chinamobile.com/PLTV/3/224/3221225923/index.m3u8">
+        <td class="idx">60</td>
+        <td class="nm">Jiangsu Educational Channel (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangsu movie channel (576p)" data-url="http://223.110.243.134/PLTV/4/224/3221225937/index.m3u8">
+        <td class="idx">61</td>
+        <td class="nm">Jiangsu Movie Channel (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangsu public &amp; news channel (576p)" data-url="http://183.207.248.71/gitv/live1/G_JSGG/G_JSGG">
+        <td class="idx">62</td>
+        <td class="nm">Jiangsu Public &amp; News Channel (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangsu satellite tv (1080p)" data-url="http://39.134.24.166/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226200/index.m3u8">
+        <td class="idx">63</td>
+        <td class="nm">Jiangsu Satellite TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangsu sports &amp; leisure channel (576p)" data-url="http://183.207.248.71/gitv/live1/G_JSTY/G_JSTY">
+        <td class="idx">64</td>
+        <td class="nm">Jiangsu Sports &amp; Leisure Channel (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangsu variety channel (576p) [not 24/7]" data-url="http://183.207.248.71/gitv/live1/G_JSZY/G_JSZY">
+        <td class="idx">65</td>
+        <td class="nm">Jiangsu Variety Channel (576p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangxi children's channel" data-url="https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8">
+        <td class="idx">66</td>
+        <td class="nm">Jiangxi Children's Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangxi city channel" data-url="https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv2.m3u8">
+        <td class="idx">67</td>
+        <td class="nm">Jiangxi City Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangxi economy &amp; life channel" data-url="https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv3.m3u8">
+        <td class="idx">68</td>
+        <td class="nm">Jiangxi Economy &amp; Life Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangxi movie channel" data-url="https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8">
+        <td class="idx">69</td>
+        <td class="nm">Jiangxi Movie Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangxi public &amp; agriculture channel" data-url="https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv5.m3u8">
+        <td class="idx">70</td>
+        <td class="nm">Jiangxi Public &amp; Agriculture Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jiangxi tv (1080p)" data-url="http://39.134.115.163:8080/PLTV/88888910/224/3221225705/index.m3u8">
+        <td class="idx">71</td>
+        <td class="nm">Jiangxi TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jilin city channel" data-url="https://lsfb.avap.jilintv.cn/zqvk7vpj/channel/7e8474e6daea44ccaa5aa2300191439e/index.m3u8">
+        <td class="idx">72</td>
+        <td class="nm">Jilin City Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jilin lifestyle channel" data-url="https://lsfb.avap.jilintv.cn/zqvk7vpj/channel/0a76740c72b74fabae611845aa21e06a/index.m3u8">
+        <td class="idx">73</td>
+        <td class="nm">Jilin Lifestyle Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jilin movie channel" data-url="https://lsfb.avap.jilintv.cn/zqvk7vpj/channel/906341e6f19b4c4bacdc89941eb85d12/index.m3u8">
+        <td class="idx">74</td>
+        <td class="nm">Jilin Movie Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="jilin rural channel" data-url="https://lsfb.avap.jilintv.cn/zqvk7vpj/channel/3ffc4824dce54b92be185555923ce382/index.m3u8">
+        <td class="idx">75</td>
+        <td class="nm">Jilin Rural Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="kangba tv" data-url="http://110.185.237.164:8888/hls/30/index.m3u8">
+        <td class="idx">76</td>
+        <td class="nm">Kangba TV</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="kix (1080p)" data-url="https://freem3u.xyz/api/live/play.m3u8?vid=9901">
+        <td class="idx">77</td>
+        <td class="nm">KIX (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="lanzhou culture &amp; tourism channel" data-url="https://liveplus.lzr.com.cn/wlpd/HD/live.m3u8">
+        <td class="idx">78</td>
+        <td class="nm">Lanzhou Culture &amp; Tourism Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="liangshan tv [not 24/7]" data-url="http://118.122.2.29:9999/hls/47/index.m3u8">
+        <td class="idx">79</td>
+        <td class="nm">Liangshan TV [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="liaoning tv (1080p)" data-url="http://39.134.39.37/PLTV/88888888/224/3221226209/index.m3u8">
+        <td class="idx">80</td>
+        <td class="nm">Liaoning TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="love nature (1080p)" data-url="https://aegis-cloudfront-1.tubi.video/6d6d0f24-8445-4b4c-bdf6-44f9e38beaa4/playlist.m3u8">
+        <td class="idx">81</td>
+        <td class="nm">Love Nature (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="love nature hd (1080p)" data-url="https://mumbai-edge.smartplaytv.in/LoveNature/index.m3u8">
+        <td class="idx">82</td>
+        <td class="nm">Love Nature HD (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="luxe tv (1080p)" data-url="http://103.154.3.101:5001/live/1736.m3u8">
+        <td class="idx">83</td>
+        <td class="nm">Luxe TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="mei ah movie channel (1080p)" data-url="http://103.172.187.30:12000/stream/mytv/null-2/master.m3u8">
+        <td class="idx">84</td>
+        <td class="nm">Mei Ah Movie Channel (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="mewatch live 1 (1080p)" data-url="https://tglmp04.akamaized.net/out/v1/898b1cbac7c747e3b1f3deb460e9b67e/manifest.mpd">
+        <td class="idx">85</td>
+        <td class="nm">meWATCH LIVE 1 (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="momo tv (1080p)" data-url="http://nmk.ioapk.com:5050/4gtv-live107/index.m3u8">
+        <td class="idx">86</td>
+        <td class="nm">MOMO TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="nanchang news &amp; generalist channel" data-url="https://play-live-hls.jxtvcn.com.cn/live-city/tv_nanchang.m3u8">
+        <td class="idx">87</td>
+        <td class="nm">Nanchang News &amp; Generalist Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="nei monggol tv 2 mongolian culture channel" data-url="http://1.24.190.98:10080/hls/40/index.m3u8">
+        <td class="idx">88</td>
+        <td class="nm">Nei Monggol TV 2 Mongolian Culture Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ningxia satellite channel (576p)" data-url="http://39.134.115.163:8080/PLTV/88888910/224/3221225726/index.m3u8">
+        <td class="idx">89</td>
+        <td class="nm">Ningxia Satellite Channel (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ntd tv (1080p)" data-url="https://ntd02.akamaized.net/HD-NY/index.m3u8">
+        <td class="idx">90</td>
+        <td class="nm">NTD TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ntd tv asia-pacific" data-url="https://live.ntdtv.com/aplive200/playlist.m3u8">
+        <td class="idx">91</td>
+        <td class="nm">NTD TV Asia-Pacific</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ntd tv canada" data-url="https://live.ntdtv.com/mllive860/playlist.m3u8">
+        <td class="idx">92</td>
+        <td class="nm">NTD TV Canada</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ntd tv canada west" data-url="https://live.ntdtv.com/cwlive220/playlist.m3u8">
+        <td class="idx">93</td>
+        <td class="nm">NTD TV Canada West</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ntd tv china" data-url="https://live.ntdtv.com/cnlive900/playlist.m3u8">
+        <td class="idx">94</td>
+        <td class="nm">NTD TV China</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ntd tv west (720p)" data-url="https://ntd02.akamaized.net/HD-LA/index.m3u8">
+        <td class="idx">95</td>
+        <td class="nm">NTD TV West (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="phoenix chinese channel (720p)" data-url="http://223.110.245.139/ott.js.chinamobile.com/PLTV/3/224/3221226922/index.m3u8">
+        <td class="idx">96</td>
+        <td class="nm">Phoenix Chinese Channel (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="pts 3" data-url="http://111.59.139.85:11888/tsfile/live/1222_1.m3u8?key=txiptv">
+        <td class="idx">97</td>
+        <td class="nm">PTS 3</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="qinghai tv (576p)" data-url="http://39.134.115.163:8080/PLTV/88888910/224/3221225727/index.m3u8">
+        <td class="idx">98</td>
+        <td class="nm">Qinghai TV (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="qtv-2" data-url="http://video10.qtv.com.cn/drm/qtv2at/manifest.m3u8">
+        <td class="idx">99</td>
+        <td class="nm">QTV-2</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="qtv-3" data-url="http://119.166.53.110:85/tsfile/live/1002_1.m3u8?authid=0&amp;key=txiptv&amp;playlive=1">
+        <td class="idx">100</td>
+        <td class="nm">QTV-3</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="qtv-4" data-url="http://119.166.53.110:85/tsfile/live/1004_1.m3u8?authid=0&amp;key=txiptv&amp;playlive=1">
+        <td class="idx">101</td>
+        <td class="nm">QTV-4</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="qtv-5" data-url="http://video10.qtv.com.cn/drm/qtv5at/manifest.m3u8">
+        <td class="idx">102</td>
+        <td class="nm">QTV-5</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="qtv-6" data-url="http://119.166.53.110:85/tsfile/live/0002_1.m3u8?authid=0&amp;key=txiptv&amp;playlive=1">
+        <td class="idx">103</td>
+        <td class="nm">QTV-6</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="rthk tv 31 (1080p) [geo-blocked]" data-url="https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/master.m3u8">
+        <td class="idx">104</td>
+        <td class="nm">RTHK TV 31 (1080p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="rthk tv 32 (1080p) [geo-blocked]" data-url="https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8">
+        <td class="idx">105</td>
+        <td class="nm">RTHK TV 32 (1080p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="rthk tv 33 (1080p) [geo-blocked]" data-url="https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/master.m3u8">
+        <td class="idx">106</td>
+        <td class="nm">RTHK TV 33 (1080p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="shandong satellite tv (720p)" data-url="http://125.210.152.18:9090/live/SDWSHD_H265.m3u8">
+        <td class="idx">107</td>
+        <td class="nm">Shandong Satellite TV (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="shandong tv (1080p)" data-url="http://39.134.115.163:8080/PLTV/88888910/224/3221225697/index.m3u8">
+        <td class="idx">108</td>
+        <td class="nm">Shandong TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="shandong tv agricultural science channel (406p) [geo-blocked]" data-url="http://livealone302.iqilu.com/iqilu/nkpd.m3u8">
+        <td class="idx">109</td>
+        <td class="nm">Shandong TV Agricultural Science Channel (406p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="shandong tv children's channel (406p) [geo-blocked]" data-url="http://livealone302.iqilu.com/iqilu/sepd.m3u8">
+        <td class="idx">110</td>
+        <td class="nm">Shandong TV Children's Channel (406p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="shandong tv life channel (1080p) [geo-blocked]" data-url="http://livealone302.iqilu.com/iqilu/shpd.m3u8">
+        <td class="idx">111</td>
+        <td class="nm">Shandong TV Life Channel (1080p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="shandong tv qilu channel (1080p) [geo-blocked]" data-url="http://livealone302.iqilu.com/iqilu/qlpd.m3u8">
+        <td class="idx">112</td>
+        <td class="nm">Shandong TV Qilu Channel (1080p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="shandong tv sports channel (1080p) [geo-blocked]" data-url="http://livealone302.iqilu.com/iqilu/typd.m3u8">
+        <td class="idx">113</td>
+        <td class="nm">Shandong TV Sports Channel (1080p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="shandong tv variety channel (406p) [geo-blocked]" data-url="http://livealone302.iqilu.com/iqilu/zypd.m3u8">
+        <td class="idx">114</td>
+        <td class="nm">Shandong TV Variety Channel (406p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="shenzhen satellite tv (2160p)" data-url="https://livepull-tcms.sztv.com.cn/live/sz4Kpgm.m3u8">
+        <td class="idx">115</td>
+        <td class="nm">Shenzhen Satellite TV (2160p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="sichuan satellite tv (576p)" data-url="http://39.134.115.163:8080/PLTV/88888910/224/3221225733/index.m3u8">
+        <td class="idx">116</td>
+        <td class="nm">Sichuan Satellite TV (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="sichuan tv women and children channel (720p) [not 24/7]" data-url="http://scgctvshow.sctv.com/hdlive/sctv7/index.m3u8">
+        <td class="idx">117</td>
+        <td class="nm">Sichuan TV Women and Children Channel (720p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="siping tv" data-url="http://stream2.jlntv.cn/sptv/sd/live.m3u8?_upt=f27750421743154598">
+        <td class="idx">118</td>
+        <td class="nm">Siping TV</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="sjtv" data-url="http://111.59.139.85:11888/tsfile/live/1220_1.m3u8?key=txiptv">
+        <td class="idx">119</td>
+        <td class="nm">SJTV</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="taiwan indigenous tv (720p)" data-url="https://streamipcfapp.akamaized.net/live/_definst_/live_720/key_b1500.m3u8">
+        <td class="idx">120</td>
+        <td class="nm">Taiwan Indigenous TV (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tdm entertainment (720p)" data-url="https://live3.tdm.com.mo/ch6/hd_ch6.live/playlist.m3u8">
+        <td class="idx">121</td>
+        <td class="nm">TDM Entertainment (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tdm ou mun (720p)" data-url="http://61.244.22.4/ch1/ch1.live/playlist.m3u8">
+        <td class="idx">122</td>
+        <td class="nm">TDM Ou Mun (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tdm sports (720p)" data-url="https://live3.tdm.com.mo/ch4/sport_ch4.live/playlist.m3u8">
+        <td class="idx">123</td>
+        <td class="nm">TDM Sports (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tdm-macau satellite (720p)" data-url="https://live3.tdm.com.mo/ch3/ch3.live/playlist.m3u8">
+        <td class="idx">124</td>
+        <td class="nm">TDM-Macau Satellite (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="techstorm (720p) [geo-blocked]" data-url="https://cdn-telkomsel-01.akamaized.net/Content/HLS/Live/channel(abe4ead2-1a88-4330-9f41-382fcf94bba2)/index.m3u8">
+        <td class="idx">125</td>
+        <td class="nm">TechStorm (720p) [Geo-blocked]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="thrill (540p)" data-url="https://cdn10jtedge.indihometv.com/atm/DASH/thrill/manifest.mpd">
+        <td class="idx">126</td>
+        <td class="nm">Thrill (540p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tianjin tv (1080p)" data-url="http://39.134.115.163:8080/PLTV/88888910/224/3221225698/index.m3u8">
+        <td class="idx">127</td>
+        <td class="nm">Tianjin TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="ttv (720p)" data-url="http://162.19.247.76:22222/live/taishi/index.m3u8">
+        <td class="idx">128</td>
+        <td class="nm">TTV (720p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tv brics chinese (1080p)" data-url="https://chibrics.mediacdn.ru/cdn/brics/chinese/playlist.m3u8">
+        <td class="idx">129</td>
+        <td class="nm">TV BRICS Chinese (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="tvbs-asia (1080p)" data-url="http://38.64.72.148/hls/modn/list/4005/playlist.m3u8">
+        <td class="idx">130</td>
+        <td class="nm">TVBS-Asia (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="viutv (1080i)" data-url="http://php.jdshipin.com/TVOD/iptv.php?id=viutv">
+        <td class="idx">131</td>
+        <td class="nm">ViuTV (1080i)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="voa tv china (1080p)" data-url="https://voa-ingest.akamaized.net/hls/live/2033878/tvmc08/playlist.m3u8">
+        <td class="idx">132</td>
+        <td class="nm">VoA TV China (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="wcetv digital channel 31.8" data-url="https://h5cul1yar48um3t.wcetv.com/hls/wcetv318.m3u8">
+        <td class="idx">133</td>
+        <td class="nm">WCETV Digital Channel 31.8</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="xi'an business information channel (180p) [not 24/7]" data-url="http://stream2.xiancity.cn/xatv3/playlist.m3u8">
+        <td class="idx">134</td>
+        <td class="nm">Xi'an Business Information Channel (180p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="xi'an silk road channel (404p) [not 24/7]" data-url="http://stream2.xiancity.cn/xatv5/playlist.m3u8">
+        <td class="idx">135</td>
+        <td class="nm">Xi'an Silk Road Channel (404p) [Not 24/7]</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="xinjiang tv 1" data-url="https://klmysjtzb.rcsxzx.com/hls/klmy2.m3u8">
+        <td class="idx">136</td>
+        <td class="nm">Xinjiang TV 1</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="xinjiang tv 2" data-url="http://110.153.180.106:55555/out_3/index.m3u8">
+        <td class="idx">137</td>
+        <td class="nm">Xinjiang TV 2</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="xinjiang tv 3" data-url="http://110.153.180.106:55555/out_2/index.m3u8">
+        <td class="idx">138</td>
+        <td class="nm">Xinjiang TV 3</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="xinjiang tv 8" data-url="http://120.70.60.179:9901/tsfile/live/1002_1.m3u8?authid=0&amp;key=txiptv&amp;playlive=1">
+        <td class="idx">139</td>
+        <td class="nm">Xinjiang TV 8</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="xizang tv chinese" data-url="https://pili-live-hls-zdzz-tv.zzxwcm.cn/zdzz-tv/nqzh.m3u8">
+        <td class="idx">140</td>
+        <td class="nm">Xizang TV Chinese</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="xizang tv tibetan" data-url="https://live.vtibet.cn/live/ZYWS20261016.stream.m3u8">
+        <td class="idx">141</td>
+        <td class="nm">Xizang TV Tibetan</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="xuzhou economic life channel (1080p)" data-url="http://223.110.245.167/ott.js.chinamobile.com/PLTV/3/224/3221225947/index.m3u8">
+        <td class="idx">142</td>
+        <td class="nm">Xuzhou Economic Life Channel (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="yanbian satellite tv (576p)" data-url="http://223.110.245.139/PLTV/4/224/3221227008/index.m3u8">
+        <td class="idx">143</td>
+        <td class="nm">Yanbian Satellite TV (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="yichang sanxia general channel" data-url="https://liveplay.ycrmt.cn/sxgd/zhpd.m3u8">
+        <td class="idx">144</td>
+        <td class="nm">Yichang Sanxia General Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="yichang sanxia travel &amp; life channel" data-url="https://liveplay.ycrmt.cn/sxgd/lysh.m3u8">
+        <td class="idx">145</td>
+        <td class="nm">Yichang Sanxia Travel &amp; Life Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="you man cartoon channel (576p)" data-url="http://183.207.249.15/PLTV/4/224/3221225933/index.m3u8">
+        <td class="idx">146</td>
+        <td class="nm">You Man Cartoon Channel (576p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="yunnan satellite tv (1080p)" data-url="https://hwapi.yunshicloud.com/8xughf/e0bx15.m3u8">
+        <td class="idx">147</td>
+        <td class="nm">Yunnan Satellite TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="zhejiang international channel" data-url="https://ali-m-l.cztv.com/channels/lantian/channel10/1080p.m3u8">
+        <td class="idx">148</td>
+        <td class="nm">Zhejiang International Channel</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr>
+      <tr data-name="zhejiang satellite tv (1080p)" data-url="http://39.134.115.163:8080/PLTV/88888910/224/3221225703/index.m3u8">
+        <td class="idx">149</td>
+        <td class="nm">Zhejiang Satellite TV (1080p)</td>
+        <td class="ac"><button class="play">试播</button><button class="copy">复制</button></td>
+      </tr></tbody></table>
+  </section>
+</main>
+<footer>静态页，可直接部署到 Cloudflare Pages / 任意静态托管</footer>
+<div id="player"><p id="ptitle"><span></span><button onclick="closeP()">关闭</button></p><video id="v" controls playsinline></video></div>
+<script>
+const v=document.getElementById('v'),P=document.getElementById('player');
+document.getElementById('q').addEventListener('input',e=>{
+  const k=e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.grp').forEach(g=>{
+    let shown=0;
+    g.querySelectorAll('tr').forEach(tr=>{
+      const hit=!k||tr.dataset.name.includes(k);
+      tr.classList.toggle('hide',!hit); if(hit)shown++;
+    });
+    g.classList.toggle('hide',shown===0);
+  });
+});
+document.addEventListener('click',async e=>{
+  const tr=e.target.closest('tr'); if(!tr)return;
+  if(e.target.classList.contains('copy')){
+    try{ await navigator.clipboard.writeText(tr.dataset.url); e.target.textContent='已复制'; setTimeout(()=>e.target.textContent='复制',1200);}catch{}
+    return;
+  }
+  if(e.target.classList.contains('play')){
+    P.classList.add('on');
+    document.querySelector('#ptitle span').textContent=tr.querySelector('.nm').textContent;
+    v.src=tr.dataset.url; v.play().catch(()=>{});
+  }
+});
+function closeP(){P.classList.remove('on');v.pause();v.removeAttribute('src');v.load();}
+</script>
+</body>
+</html>
